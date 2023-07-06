@@ -66,5 +66,7 @@ button:hover {
 .message{
   display: block;
   color: #4caf50;
-  font-size: 1.2rem;
+  font-size: 1rem;
+  margin-top: 14px;
+  text-align: center;
 }
