@@ -3,7 +3,7 @@ const fromElement = document.querySelector("#from");
 const toElement = document.querySelector("#to");
 const btn = document.querySelector("button");
 const resultElement = document.querySelector("#result");
-const message = document.querySelector(".message");
+const messageElement = document.querySelector(".message");
 
 function convert(event) {
   event.preventDefault();
@@ -33,7 +33,7 @@ function convert(event) {
   }
 
   let result;
-  switch(toValue){
+  switch (toValue) {
     case "m":
       result = meters;
       break;
@@ -48,8 +48,16 @@ function convert(event) {
       break;
   }
 
-  console.log(fromValue, toValue);
-  console.log(meters, result);
+  resultElement.value = result;
+
+  const fromLabel = fromElement.options[fromElement.selectedIndex].text;
+  const toLabel = toElement.options[toElement.selectedIndex].text;
+
+  const message = `${inputNum.value} ${fromLabel} equivalem a ${result} ${toLabel}`;
+
+  messageElement.textContent = message;
+
+  return;
 }
 
 btn.addEventListener("click", convert);
