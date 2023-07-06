@@ -56,17 +56,28 @@ button {
   border-radius: 5px;
   font-size: 1rem;
   cursor: pointer;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 button:hover {
   background: #4caf50;
 }
 
-.message{
+.message {
   display: block;
   color: #4caf50;
   font-size: 1rem;
   margin-top: 14px;
   text-align: center;
+  font-weight: 700;
+}
+
+@media (max-width: 400px) {
+  .conteudo h1 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  .message{
+    line-height: 24px;
+  }
 }
