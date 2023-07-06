@@ -9,9 +9,10 @@ function convert(event) {
   event.preventDefault();
   const fromValue = fromElement.value;
   const toValue = toElement.value;
+  const input = inputNum.value;
 
   if (fromValue === toValue) {
-    resultElement.value = inputNum.value;
+    resultElement.value = input;
     message.textContent = "";
     return;
   }
@@ -19,16 +20,16 @@ function convert(event) {
   let meters;
   switch (fromValue) {
     case "m":
-      meters = inputNum.value;
+      meters = input;
       break;
     case "km":
-      meters = inputNum.value * 1000;
+      meters = input * 1000;
       break;
     case "cm":
-      meters = inputNum.value / 100;
+      meters = input / 100;
       break;
     case "mm":
-      meters = inputNum.value / 1000;
+      meters = input / 1000;
       break;
   }
 
@@ -53,7 +54,7 @@ function convert(event) {
   const fromLabel = fromElement.options[fromElement.selectedIndex].text;
   const toLabel = toElement.options[toElement.selectedIndex].text;
 
-  const message = `${inputNum.value} ${fromLabel} equivalem a ${result} ${toLabel}`;
+  const message = `${input} ${fromLabel} equivalem a ${result} ${toLabel}`;
 
   messageElement.textContent = message;
 
